@@ -1,0 +1,200 @@
+//q1
+
+const name = 'john'
+
+const result = name.slice(1, 3);
+
+const ucFirst = (str) => {
+  return str[0].toUpperCase() + str.slice(1);
+};
+
+console.log(ucFirst(name))
+
+//q2
+
+const str = 'buy ViAgRA now';
+const checkSpam = (needle, haystack) => {
+  let count = 0;
+  const arr = haystack.split(' ');
+  for (let i = 0; i < arr.length; i++) {
+    if (
+      arr[i].toLowerCase() === needle.toLowerCase()
+    ) {
+      count = count + 1;
+    }
+  }
+  return count;
+};
+
+console.log(checkSpam('free', 'sex', 'viagra', 'porn', checkSpam))
+
+const str = 'free porn';
+const checkSpam = (needle, haystack) => {
+  let count = 0;
+  const arr = haystack.split(' ');
+  for (let i = 0; i < arr.length; i++) {
+    if (
+      arr[i].toLowerCase() === needle.toLowerCase()
+    ) {
+      count = count + 1;
+    }
+  }
+  return count;
+};
+
+console.log(checkSpam('free', 'sex', 'viagra', 'porn', checkSpam))
+
+const str = 'freebie';
+const checkSpam = (needle, haystack) => {
+  let count = 0;
+  const arr = haystack.split(' ');
+  for (let i = 0; i < arr.length; i++) {
+    if (
+      arr[i].toLowerCase() === needle.toLowerCase()
+    ) {
+      count = count + 1;
+    }
+  }
+  return count;
+};
+
+console.log(checkSpam('free', 'sex', 'viagra', 'porn', checkSpam))
+
+const str = 'free sex';
+const checkSpam = (needle, haystack) => {
+  let count = 0;
+  const arr = haystack.split(' ');
+  for (let i = 0; i < arr.length; i++) {
+    if (
+      arr[i].toLowerCase() === needle.toLowerCase()
+    ) {
+      count = count + 1;
+    }
+  }
+  return count;
+};
+
+console.log(checkSpam('free', 'sex', 'viagra', 'porn', checkSpam))
+
+const str = 'innocent rabbit';
+const checkSpam = (needle, haystack) => {
+  let count = 0;
+  const arr = haystack.split(' ');
+  for (let i = 0; i < arr.length; i++) {
+    if (
+      arr[i].toLowerCase() === needle.toLowerCase()
+    ) {
+      count = count + 1;
+    }
+  }
+  return count;
+};
+
+console.log(checkSpam('free', 'sex', 'viagra', 'porn', checkSpam))
+
+//q3
+
+const truncate = "What I'd like to tell on this topic is:"
+if (truncate >= 20){
+    const truncate = truncate.split('').join('...').toTruncate();
+} else {
+    return
+}
+
+const truncate = "Hi everyone!"
+if (truncate >= 20){
+    const truncate = truncate.split('').join('...').toTruncate();
+} else {
+    return
+}
+
+//q4
+
+const currencyValue = '$120'
+
+const extractCurrencyValue = currencyValue.split('$').join('').toString();
+
+console.log(extractCurrencyValue)
+
+//q5
+
+const fruits = ['Apple', 'Pear', 'Orange']
+
+const shoppingCart = fruits;
+
+shoppingCart.push('Banana')
+
+console.log(fruits)
+
+//q6
+
+const genres = ['Jazz', 'Blues'];
+
+genres.push('Rock-n-Roll')
+
+genres[1] = 'Classics'
+
+genres.unshift('Rap', 'Reggae')
+
+console.log(genres)
+
+//q7
+
+const camelize = 'background-color'
+
+const camelize = camelize.split('-').join('C');
+
+const camelize = 'list-style-image'
+
+const camelize = camelize.split('-').join('S, I');
+
+const camelize = 'font-size'
+
+const camelize = camelize.split('-').join('S');
+
+//q8
+
+const filterRange(arr, a, b) => {
+  return arr.filter(item => (a <= item && item <= b));
+}
+
+let arr = [5, 3, 8, 1];
+
+let filtered = filterRange(arr, 1, 4);
+
+console.log(filtered)
+
+console.log(arr)
+
+//q9
+
+function filterRangeInPlace(arr, a, b) {
+
+  for (let i = 0; i < arr.length; i++) {
+    let v = arr[i];
+
+    
+    if (v < a || v > b) {
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+}
+
+let arr = [5, 3, 8, 1];
+
+filterRangeInPlace(arr, 1, 4);
+
+console.log(arr);
+
+//q10
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [ john, pete, mary ];
+
+let names = users.map(thing => thing.name);
+
+console.log(names);
