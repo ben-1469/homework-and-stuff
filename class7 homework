@@ -1,0 +1,79 @@
+//q1
+
+Array.isArray([1, 2, 3, 54])
+
+Array.isArray(35)
+//q2
+
+const array = 'orange', 'apple', 'grape'
+const joinArray = array.join('$');
+console.log(joinArray)
+
+//q3
+
+
+
+//q4
+
+const sum = input => {
+  if (toString.call(input) !== "[object Array]")
+    return false;
+    const total = 0;
+    for(const i=0;i<input.length;i++) {                 
+  if(isNaN(input[i])) {
+    continue;
+  total += Number(input[i]);
+  }
+    return ;
+}
+
+//q5
+
+const product = input => {
+  if (toString.call(input) !== "[object Array]")
+    return false;
+    const total = 0;
+    for(const i=0;i<input.length;i++) {                 
+  if(isNaN(input[i])) {
+    continue;
+  total *= Number(input[i]);
+  }
+    return ;
+}
+
+//q6
+
+const chars = [1, 1, 2, 3, 7, 7, 0]
+
+const uniqueChars = [];
+chars.forEach((c) => {
+    if (uniqueChars.includes(c)) {
+        uniqueChars.push(c);
+    }
+});
+
+console.log(uniqueChars);
+
+
+//q7
+
+const isLeap = year => {
+   return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
+};
+
+console.log(isLeap(2000, 2018))
+console.log(isLeap(2013, 2015))
+
+//q8
+
+const fibonacci = (num) => {
+  if(num < 2){
+    return num;
+  }
+
+  return fibonacci(num - 1) + fibonacci(num - 2);
+}
+
+console.log(fibonacci(0));
+console.log(fibonacci(4));
+console.log(fibonacci(3));
