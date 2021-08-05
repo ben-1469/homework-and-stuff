@@ -1,0 +1,74 @@
+import './App.css';
+
+const users = [
+  {
+    img: 'https://randomuser.me/api/portraits/lego/1.jpg',
+    name: 'wut',
+    title: 'pronoun',
+  },
+  {
+    img: 'https://www.ourteennetwork.com/cacheimagenes/px750-278415131.jpg',
+    name: 'hmm',
+    title: 'exclamation',
+  },
+  {
+    img: 'https://www.kindpng.com/picc/m/405-4059497_random-profile-picture-for-steam-hd-png-download.png',
+    name: 'where',
+    title: 'adverb',
+  },
+  {
+    img: 'https://th.bing.com/th/id/R.0da0e12a4052919ad8f9227ecd5fdd2f?rik=uNaYXqC84o5ouw&riu=http%3a%2f%2fi.imgur.com%2fPNQcxQ0.gif&ehk=PmQCHdmt24uxTj8%2flWqeQKUB6VIdMrq6tVgoaTYXSCI%3d&risl=&pid=ImgRaw&r=0',
+    name: 'am',
+    title: 'verb',
+  },
+  {
+    img: 'https://pbs.twimg.com/profile_images/620762524850520065/P6Lntktk_400x400.jpg',
+    name: 'i',
+    title: 'pronoun',
+  },
+  {
+    img: 'https://cdn0.iconfinder.com/data/icons/basic-designs-1/512/Basic_Design_1-line-03-512.png',
+    name: 'i',
+    title: 'pronoun',
+  },
+  {
+    img: 'https://cdn.drawception.com/images/avatars/647493-B9E.png',
+    name: 'do',
+    title: 'verb',
+  },
+  {
+    img: 'https://cdn0.iconfinder.com/data/icons/basic-designs-1/512/Basic_Design_1-line-03-512.png',
+    name: 'not',
+    title: 'adverb',
+  },
+  {
+    img: 'https://cdn0.iconfinder.com/data/icons/basic-designs-1/512/Basic_Design_1-line-03-512.png',
+    name: 'know',
+    title: 'verb',
+  }
+];
+
+function App() {
+  return (
+    <div className='App'>
+      <h1>Hello world</h1>
+      {users.map((v, i) => (
+        <Card img={v.img} name={v.name} title={v.title} />
+      ))}
+    </div>
+  );
+}
+
+const Card = ({ img, name, title }) => {
+  return (
+    <div className='card'>
+      <img src={img} alt="img" />
+      <h4>{name}</h4>
+      <p>
+        {title}
+      </p>
+    </div>
+  );
+};
+
+export default App;
