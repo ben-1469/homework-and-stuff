@@ -1,0 +1,19 @@
+import React, { useState } from 'react';
+import './app.css';
+
+function Calc() {
+  <div className='app'>
+  const [addend, addend2, setValue] = useState(0);
+  const handleChangeAdd = () => setValue({addend + addend2})
+  return (
+    <input type='text' value={addend}>
+    <input type='text' value={addend2}>
+    <button onChange={handleChangeAdd}>
+    
+    Add Them!
+    
+    </button>
+  )
+  </div>
+}
+export default App;
