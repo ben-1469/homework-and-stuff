@@ -1,0 +1,12 @@
+.app {
+  background-color:#9ea832;
+}
+
+button {
+  color:#FFFF00;
+}
+
+button:hover {
+  padding: 8px;
+  box-shadow: 5px 10px;
+}
