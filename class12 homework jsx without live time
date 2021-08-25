@@ -1,0 +1,79 @@
+import React from 'react'
+import './App.css';
+import { CheckCircleIcon} from '@heroicons/react/solid';
+
+const exampleTodoList = [{
+  isComplete: true,
+  text: 'Buy new sweatshirt',
+
+}, {
+  isComplete: true,
+  text: 'Knit a scarf',
+
+}, {
+  isComplete: false  ,
+  text: 'Read an article',
+
+}];
+function Todolist() {
+  const [todos, setTodos] = useState(exampleTodoList);
+  const [input, setTodos] = useState('');
+
+	const handleSubmitTodo = () => {
+		if (input) {
+			const nextTodo = [...todos];
+		nextTodo.push({text: input, isComplete: false});
+		setTodos(nextTodo);
+		setInput('');
+		} else {
+			alert('Fill out the input you idiot')
+		}
+		
+	};
+
+	const handleToggleTodo = (index) => {
+		const nextTodo = [...todos]
+		nextTodo[index].isComplete = !nextTodo[index].isComplete
+		setTodos(nextTodo);
+	};
+  return (
+	<div className='todo-container'>
+       <h1>What Needs to be Done?</h1>
+      <div className='box'>
+        <div className='header'>
+          <div className='date'>
+            <h2>12</h2>
+            <p>jan</p>
+            <span>2016</span>
+          </div>
+          <div className='week'>
+            <h3>tuesday</h3>
+          </div>
+        </div>
+        <div className='body'>
+          {todos.map((v, i) => (
+              <div className="todo" key={i}>
+                <span>{v.text}</span>
+								<div onClick={() => handleToggleTodo(i)}>
+									{v.isComplete ? (
+										<CheckCircleIcon />
+									) : (<div className="circle" />
+									)}
+              	</div>
+							</div>
+          ))}
+        </div>
+        <div className="footer">
+          <input 
+						value={input}
+						onChange={(e) => setInput(e.target.value)}
+		  	    type="text" 
+					/>
+          <button onClick={handleSubmitTodo}>Submit</button>
+        </div>
+      </div>
+	</div>
+  );
+}
+
+export default Todolist
