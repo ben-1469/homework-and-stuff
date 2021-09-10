@@ -1,0 +1,69 @@
+import './App.css';
+import {useState} from 'react';
+var randomColor = require('randomcolor');
+
+
+
+const initialData = [
+  {
+    title: 'What To Do',
+    color: randomColor(),
+    todos: [
+      'Lorem',
+      'Ipsum'
+    ]
+  },
+  {
+    title: 'What is Done',
+    color: randomColor(),
+    todos: [
+      'Lorem',
+      'Ipsum'
+    ]
+  },
+
+]
+
+function App() {
+  const [data, setData] = useState(initialData);
+
+  const handleAddTodo = (index) => {
+    const response = prompt('What is this new thing going to be you idiot');
+    const nextData = [...data];
+    nextData[index].todos.push(response);
+    setData(nextData);
+  };
+  
+  return (
+    <div className="page">
+      {data.map((v,i) => (
+      <div key={i}className='column-container'>
+        <div
+        style={{
+          backgroundColor: v.color,
+        }} 
+        className='header'>
+          <p>{v.title}</p>
+        </div>
+        <div className='column'>
+          {
+            v.todos.map((w, j) => (
+            <div className="todo">
+              {i > 0 && <button>Prev</button>}
+              <span>{w}</span>
+              {i < data.length - 1 && <button>Next</button>}
+            </div>
+            ))
+          }
+        </div>
+        <div className='new-todo-button'>
+          <button onClick={() => handleAddTodo(i)}>+ New</button>
+        </div>
+      </div>
+      ))}
+    </div>
+    
+  );
+}
+
+export default App;
