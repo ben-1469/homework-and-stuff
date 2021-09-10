@@ -1,0 +1,36 @@
+body{
+  background-color:rgb(240, 239, 233);
+}
+
+.page {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-top: 100px;
+  grid-column-gap: 20px;
+}
+
+
+.todo {
+  padding: 15px 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+}
+
+.todo button {
+  background-color:rgb(113, 225, 116);
+  border-style:none;
+}
+
+.new-todo-button button {
+  background-color:rgb(225, 113, 113);
+  border-style:none;
+}
+
+.header {
+  padding: 5px;
+  background-color:white;
+  text-align: center;
+  margin-bottom: 10px;
+}
